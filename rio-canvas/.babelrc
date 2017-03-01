@@ -1,0 +1,12 @@
+{
+  "presets": [
+    ["es2015", { "modules": false, "loose" : true  }],
+    "react",
+    "stage-2"
+  ],
+  "plugins": ["transform-es2015-modules-commonjs","react-hot-loader/babel"],
+  "ignore": [
+    "./src/js/pages/javatari/javatari.js",
+    "./src/js/pages/nesbox/nesbox.js"
+  ]
+}
