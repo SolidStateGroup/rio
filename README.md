@@ -53,6 +53,8 @@ An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>R
 #Installation
 Project specific documentation can be found within each of the application directories above. A few high level notes here to keep in mind:
 
+<img src="./rio-mobile/example.gif"/>
+
 - <a href='./rio-server'>rio-server</a> can run independently, simply go through the installation instructions there and simulate the LED wall in your terminal within minutes.
 
 - <a href='./rio-canvase'>rio-canvas</a> Requires you to be running **rio-server** and have a valid websocket address defined in its ```config.js```
