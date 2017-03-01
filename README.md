@@ -108,5 +108,5 @@ npm run android
 We're curious to see how people are using this library, submit an issue letting us know and we'll show it off here.
 
 #Contribute
-We welcome new features / bug fixes, feel free to submit a PR or add an issue with your suggestions.
+We welcome new features / bug fixes, feel free to submit a PR or add an issue with your suggestions. Even if the integrations are pretty out there (biosensors, big data, image recognition) we're willing to give it a go and help out.
 
