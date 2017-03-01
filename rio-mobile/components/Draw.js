@@ -86,8 +86,8 @@ const Draw = class extends Component {
                           const ctx = canvas.getContext("2d");
 
                           const draw = (x, y) => {
-                            const penSizeX = Math.floor(${canvasWidth / 60});
-                            const penSizeY = Math.floor(${canvasHeight / 34});
+                            const penSizeX = Math.floor(${canvasWidth / config.matrix.width});
+                            const penSizeY = Math.floor(${canvasHeight / config.matrix.height});
 
                             x = Math.floor(x / penSizeX) * penSizeX;
                             y = Math.floor(y / penSizeY) * penSizeY;
@@ -102,8 +102,8 @@ const Draw = class extends Component {
                             ctx.fillRect(x, y, penSizeX, penSizeY);
 
                             var resizeCanvas = document.createElement('canvas');
-                            resizeCanvas.width = 60;
-                            resizeCanvas.height = 34;
+                            resizeCanvas.width = ${config.matrix.width};
+                            resizeCanvas.height =  ${config.matrix.height};
                             resizeCanvas.getContext('2d').drawImage(canvas, 0, 0, 60, 34);
                             var imageData = resizeCanvas.getContext('2d').getImageData(0, 0, 60, 34).data;
                             frame = [];

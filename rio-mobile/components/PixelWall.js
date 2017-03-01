@@ -40,6 +40,8 @@ const TheComponent = class extends Component {
             document.getElementById('canvas').width = window.renderWidth;
             document.getElementById('canvas').height = window.renderHeight;
         `;
+        const actualWidth = config.matrix.width;
+        const actualHeight = config.matrix.height;
         return (
             <WebView
                 ref={webview => { this.webview = webview; }}
@@ -60,9 +62,9 @@ const TheComponent = class extends Component {
                             ws.binaryType = 'arraybuffer';
                             ws.onmessage = (e) => {
                                 var canvas = document.createElement('canvas');
-                                canvas.width = 60;
-                                canvas.height = 34;
-                                var imageData = new ImageData(new Uint8ClampedArray(e.data), 60, 34);
+                                canvas.width = ${actualWidth};
+                                canvas.height = ${actualHeight};
+                                var imageData = new ImageData(new Uint8ClampedArray(e.data), ${actualWidth}, ${actualHeight});
                                 canvas.getContext('2d').putImageData(imageData, 0, 0);
                                 document.getElementById('canvas').getContext('2d').drawImage(canvas, 0, 0, window.renderWidth, window.renderHeight);
                             };
