@@ -1,0 +1,30 @@
+{
+  "bin": {
+    "ssg-frontend": "bin/index.js"
+  },
+  "scripts": {
+    "test": "node bin/index.js mytest com.solidstategroup.test -f"
+  },
+  "dependencies": {
+    "char-spinner": "^1.0.1",
+    "minimist": "^1.2.0",
+    "react-native-app-id": "^0.2.0"
+  },
+  "description": "**What is this?**",
+  "devDependencies": {},
+  "name": "rio",
+  "optionalDependencies": {},
+  "preferGlobal": "true",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SolidStateGroup/rio.git"
+  },
+  "author": "ssg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SolidStateGroup/rio/issues"
+  },
+  "homepage": "https://github.com/SolidStateGroup/rio#readme"
+}
