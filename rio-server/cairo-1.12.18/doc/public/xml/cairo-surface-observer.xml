@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="cairo-cairo-surface-observer">
+<refmeta>
+<refentrytitle role="top_of_page" id="cairo-cairo-surface-observer.top_of_page">cairo-surface-observer</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  CAIRO Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>cairo-surface-observer</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="cairo-cairo-surface-observer.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>#define             <link linkend="CAIRO-HAS-OBSERVER-SURFACE:CAPS">CAIRO_HAS_OBSERVER_SURFACE</link>
+<link linkend="cairo-surface-t"><returnvalue>cairo_surface_t</returnvalue></link> *   <link linkend="cairo-surface-create-observer">cairo_surface_create_observer</link>       (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *target</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-mode-t"><type>cairo_surface_observer_mode_t</type></link> mode</parameter>);
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-add-fill-callback">cairo_surface_observer_add_fill_callback</link>
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-add-finish-callback">cairo_surface_observer_add_finish_callback</link>
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-add-flush-callback">cairo_surface_observer_add_flush_callback</link>
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-add-glyphs-callback">cairo_surface_observer_add_glyphs_callback</link>
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-add-mask-callback">cairo_surface_observer_add_mask_callback</link>
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-add-paint-callback">cairo_surface_observer_add_paint_callback</link>
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-add-stroke-callback">cairo_surface_observer_add_stroke_callback</link>
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                (<link linkend="cairo-surface-observer-callback-t">*cairo_surface_observer_callback_t</link>)
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *observer</parameter>,
+                                                         <parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *target</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);
+<link linkend="double"><returnvalue>double</returnvalue></link>              <link linkend="cairo-surface-observer-elapsed">cairo_surface_observer_elapsed</link>      (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *surface</parameter>);
+enum                <link linkend="cairo-surface-observer-mode-t">cairo_surface_observer_mode_t</link>;
+<link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      <link linkend="cairo-surface-observer-print">cairo_surface_observer_print</link>        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *surface</parameter>,
+                                                         <parameter><link linkend="cairo-write-func-t"><type>cairo_write_func_t</type></link> write_func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *closure</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="cairo-cairo-surface-observer.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+<refsect1 id="cairo-cairo-surface-observer.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="CAIRO-HAS-OBSERVER-SURFACE:CAPS" role="macro">
+<title>CAIRO_HAS_OBSERVER_SURFACE</title>
+<indexterm zone="CAIRO-HAS-OBSERVER-SURFACE:CAPS"><primary sortas="HAS_OBSERVER_SURFACE">CAIRO_HAS_OBSERVER_SURFACE</primary></indexterm>
+<programlisting>#define CAIRO_HAS_OBSERVER_SURFACE 1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-create-observer" role="function" condition="since:1.12">
+<title>cairo_surface_create_observer ()</title>
+<indexterm zone="cairo-surface-create-observer" role="1.12"><primary sortas="surface_create_observer">cairo_surface_create_observer</primary></indexterm>
+<programlisting><link linkend="cairo-surface-t"><returnvalue>cairo_surface_t</returnvalue></link> *   cairo_surface_create_observer       (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *target</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-mode-t"><type>cairo_surface_observer_mode_t</type></link> mode</parameter>);</programlisting>
+<para>
+Create a new surface that exists solely to watch another is doing. In
+the process it will log operations and times, which are fast, which are
+slow, which are frequent, etc.
+</para>
+<para>
+The <parameter>mode</parameter> parameter can be set to either CAIRO_SURFACE_OBSERVER_NORMAL
+or CAIRO_SURFACE_OBSERVER_RECORD_OPERATIONS, to control whether or not
+the internal observer should record operations.
+</para><variablelist role="params">
+<varlistentry><term><parameter>target</parameter>&#160;:</term>
+<listitem><simpara>an existing surface for which the observer will watch</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mode</parameter>&#160;:</term>
+<listitem><simpara>sets the mode of operation (normal vs. record)</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a pointer to the newly allocated surface. The caller
+owns the surface and should call <link linkend="cairo-surface-destroy"><function>cairo_surface_destroy()</function></link> when done
+with it.
+This function always returns a valid pointer, but it will return a
+pointer to a "nil" surface if <parameter>other</parameter> is already in an error state
+or any other error occurs.</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 1.12</para></refsect2>
+<refsect2 id="cairo-surface-observer-add-fill-callback" role="function">
+<title>cairo_surface_observer_add_fill_callback ()</title>
+<indexterm zone="cairo-surface-observer-add-fill-callback"><primary sortas="surface_observer_add_fill_callback">cairo_surface_observer_add_fill_callback</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_add_fill_callback
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-add-finish-callback" role="function">
+<title>cairo_surface_observer_add_finish_callback ()</title>
+<indexterm zone="cairo-surface-observer-add-finish-callback"><primary sortas="surface_observer_add_finish_callback">cairo_surface_observer_add_finish_callback</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_add_finish_callback
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-add-flush-callback" role="function">
+<title>cairo_surface_observer_add_flush_callback ()</title>
+<indexterm zone="cairo-surface-observer-add-flush-callback"><primary sortas="surface_observer_add_flush_callback">cairo_surface_observer_add_flush_callback</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_add_flush_callback
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-add-glyphs-callback" role="function">
+<title>cairo_surface_observer_add_glyphs_callback ()</title>
+<indexterm zone="cairo-surface-observer-add-glyphs-callback"><primary sortas="surface_observer_add_glyphs_callback">cairo_surface_observer_add_glyphs_callback</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_add_glyphs_callback
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-add-mask-callback" role="function">
+<title>cairo_surface_observer_add_mask_callback ()</title>
+<indexterm zone="cairo-surface-observer-add-mask-callback"><primary sortas="surface_observer_add_mask_callback">cairo_surface_observer_add_mask_callback</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_add_mask_callback
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-add-paint-callback" role="function">
+<title>cairo_surface_observer_add_paint_callback ()</title>
+<indexterm zone="cairo-surface-observer-add-paint-callback"><primary sortas="surface_observer_add_paint_callback">cairo_surface_observer_add_paint_callback</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_add_paint_callback
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-add-stroke-callback" role="function">
+<title>cairo_surface_observer_add_stroke_callback ()</title>
+<indexterm zone="cairo-surface-observer-add-stroke-callback"><primary sortas="surface_observer_add_stroke_callback">cairo_surface_observer_add_stroke_callback</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_add_stroke_callback
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *abstract_surface</parameter>,
+                                                         <parameter><link linkend="cairo-surface-observer-callback-t"><type>cairo_surface_observer_callback_t</type></link> func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-callback-t" role="function">
+<title>cairo_surface_observer_callback_t ()</title>
+<indexterm zone="cairo-surface-observer-callback-t"><primary sortas="surface_observer_callback_t">cairo_surface_observer_callback_t</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                (*cairo_surface_observer_callback_t)
+                                                        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *observer</parameter>,
+                                                         <parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *target</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *data</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-elapsed" role="function">
+<title>cairo_surface_observer_elapsed ()</title>
+<indexterm zone="cairo-surface-observer-elapsed"><primary sortas="surface_observer_elapsed">cairo_surface_observer_elapsed</primary></indexterm>
+<programlisting><link linkend="double"><returnvalue>double</returnvalue></link>              cairo_surface_observer_elapsed      (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *surface</parameter>);</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-surface-observer-mode-t" role="enum" condition="since:1.12">
+<title>enum cairo_surface_observer_mode_t</title>
+<indexterm zone="cairo-surface-observer-mode-t" role="1.12"><primary sortas="surface_observer_mode_t">cairo_surface_observer_mode_t</primary></indexterm>
+<programlisting>typedef enum {
+	CAIRO_SURFACE_OBSERVER_NORMAL = 0,
+	CAIRO_SURFACE_OBSERVER_RECORD_OPERATIONS = 0x1
+} cairo_surface_observer_mode_t;
+</programlisting>
+<para>
+Whether operations should be recorded.
+</para><variablelist role="enum">
+<varlistentry id="CAIRO-SURFACE-OBSERVER-NORMAL:CAPS" role="constant">
+<term><literal>CAIRO_SURFACE_OBSERVER_NORMAL</literal></term>
+<listitem><simpara>no recording is done
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="CAIRO-SURFACE-OBSERVER-RECORD-OPERATIONS:CAPS" role="constant">
+<term><literal>CAIRO_SURFACE_OBSERVER_RECORD_OPERATIONS</literal></term>
+<listitem><simpara>operations are recorded
+</simpara></listitem>
+</varlistentry>
+</variablelist><para role="since">Since 1.12</para></refsect2>
+<refsect2 id="cairo-surface-observer-print" role="function">
+<title>cairo_surface_observer_print ()</title>
+<indexterm zone="cairo-surface-observer-print"><primary sortas="surface_observer_print">cairo_surface_observer_print</primary></indexterm>
+<programlisting><link linkend="cairo-status-t"><returnvalue>cairo_status_t</returnvalue></link>      cairo_surface_observer_print        (<parameter><link linkend="cairo-surface-t"><type>cairo_surface_t</type></link> *surface</parameter>,
+                                                         <parameter><link linkend="cairo-write-func-t"><type>cairo_write_func_t</type></link> write_func</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *closure</parameter>);</programlisting>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+</refentry>

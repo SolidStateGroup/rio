@@ -1,0 +1,17 @@
+{
+  "name": "pixelwall-api",
+  "description": "Listens for slack images and sends the image data out via UDP",
+  "main": "./index.js",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gifuct-js": "^1.0.0"
+  }
+}

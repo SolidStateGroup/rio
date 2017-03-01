@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="cairo-cairo-skia">
+<refmeta>
+<refentrytitle role="top_of_page" id="cairo-cairo-skia.top_of_page">cairo-skia</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  CAIRO Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>cairo-skia</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="cairo-cairo-skia.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>struct              <link linkend="cairo-skia-context">cairo_skia_context</link>;
+typedef             <link linkend="cairo-skia-context-t">cairo_skia_context_t</link>;
+struct              <link linkend="cairo-skia-surface">cairo_skia_surface</link>;
+typedef             <link linkend="cairo-skia-surface-t">cairo_skia_surface_t</link>;
+<link linkend="bool"><returnvalue>bool</returnvalue></link>                <link linkend="format-to-sk-config">format_to_sk_config</link>                 (<parameter><link linkend="cairo-format-t"><type>cairo_format_t</type></link> format</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="cairo-cairo-skia.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+<refsect1 id="cairo-cairo-skia.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="cairo-skia-context" role="struct">
+<title>struct cairo_skia_context</title>
+<indexterm zone="cairo-skia-context"><primary sortas="skia_context">cairo_skia_context</primary></indexterm>
+<programlisting>struct cairo_skia_context {
+    cairo_t base;
+
+    cairo_skia_surface_t *original;
+    cairo_skia_surface_t *target;
+
+    cairo_matrix_t matrix;
+
+    SkCanvas *canvas;
+    SkPaint *paint;
+    SkPath *path;
+
+    cairo_surface_t *source;
+    cairo_image_surface_t *source_image;
+    void *source_extra;
+};
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-skia-context-t" role="typedef">
+<title>cairo_skia_context_t</title>
+<indexterm zone="cairo-skia-context-t"><primary sortas="skia_context_t">cairo_skia_context_t</primary></indexterm>
+<programlisting>typedef struct _cairo_skia_context cairo_skia_context_t;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-skia-surface" role="struct">
+<title>struct cairo_skia_surface</title>
+<indexterm zone="cairo-skia-surface"><primary sortas="skia_surface">cairo_skia_surface</primary></indexterm>
+<programlisting>struct cairo_skia_surface {
+    cairo_image_surface_t image;
+
+    SkBitmap *bitmap;
+};
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="cairo-skia-surface-t" role="typedef">
+<title>cairo_skia_surface_t</title>
+<indexterm zone="cairo-skia-surface-t"><primary sortas="skia_surface_t">cairo_skia_surface_t</primary></indexterm>
+<programlisting>typedef struct _cairo_skia_surface cairo_skia_surface_t;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="format-to-sk-config" role="function">
+<title>format_to_sk_config ()</title>
+<indexterm zone="format-to-sk-config"><primary>format_to_sk_config</primary></indexterm>
+<programlisting><link linkend="bool"><returnvalue>bool</returnvalue></link>                format_to_sk_config                 (<parameter><link linkend="cairo-format-t"><type>cairo_format_t</type></link> format</parameter>);</programlisting>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+</refentry>

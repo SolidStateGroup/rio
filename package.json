@@ -1,16 +1,13 @@
 {
-  "bin": {
-    "ssg-frontend": "bin/index.js"
-  },
   "scripts": {
-    "test": "node bin/index.js mytest com.solidstategroup.test -f"
+    "canvas": "cd ./rio-canvas && npm s",
+    "server": "cd ./rio-canvas && npm s",
+    "ios": "cd ./rio-mobile && npm run ios",
+    "android": "cd ./rio-mobile && npm run ios"
   },
   "dependencies": {
-    "char-spinner": "^1.0.1",
-    "minimist": "^1.2.0",
-    "react-native-app-id": "^0.2.0"
   },
-  "description": "**What is this?**",
+  "description": "An open source library allowing you to create an internet connected LED wall Edit",
   "devDependencies": {},
   "name": "rio",
   "optionalDependencies": {},

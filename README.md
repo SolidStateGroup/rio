@@ -45,7 +45,7 @@ An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>R
 
 
 #Installation
-Installation instructions can be found within each of the application directories above. A few high level notes here to keep in mind:
+Project specific documentation can be found within each of the application directories above. A few high level notes here to keep in mind:
 
 - <a href='./rio-server'>rio-server</a> can run independently, simply go through the installation instructions there and simulate the LED wall in your terminal within minutes.
 
@@ -54,4 +54,37 @@ Installation instructions can be found within each of the application directorie
 -  <a href='./rio-mobile'>rio-mobile</a> Requires you to be running both **rio-server** and **rio-canvas** have a valid api/websocket address defined in its ```config.js```
 
 
+```
+brew install pkg-config glib cairo libpng jpeg giflib
+```
 
+```
+cd ./rio-server && npm i
+```
+
+```
+cd ./rio-canvas && npm i
+```
+
+```
+cd ./rio-mobile && npm i
+```
+
+
+#Running
+
+```
+npm run server
+```
+
+```
+npm run canvas
+```
+
+```
+npm run ios
+```
+
+```
+npm run android
+```

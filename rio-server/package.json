@@ -1,0 +1,32 @@
+{
+  "name": "pixelwall-api",
+  "display_name": "AnyPixel Slack Messaging API",
+  "version": "1.0.0",
+  "description": "Listens for slack images and sends the image data out via UDP",
+  "main": "./index.js",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "3.10.3"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "pi": "python ./firmware/rpi/neopixel.py",
+    "dev": "nodemon --exec npm run start"
+  },
+  "dependencies": {
+    "@slack/client": "^3.6.0",
+    "ansi-256-colors": "^1.1.0",
+    "body-parser": "^1.13.3",
+    "canvas": "^1.6.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "fluent-ffmpeg": "^2.1.0",
+    "lodash": "^4.16.2",
+    "node-fetch": "^1.6.3",
+    "node-ipc": "^8.10.2",
+    "node-uuid": "^1.4.7",
+    "request": "^2.75.0",
+    "ws": "^1.1.1",
+    "youtube-dl": "^1.11.1"
+  }
+}
