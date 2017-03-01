@@ -14,10 +14,10 @@ These files interpret data coming in before frame data is sent to the LED wall.
 
 
 2. **outputs** -
-These files intepret take frame data and output them:
+These files interpret frame data and output them:
 
 - ```console-output``` - Write coloured pixels to terminal.
-- ```pi-output``` - Sends data to our lightweight python led wall firmware.
+- ```pi-output``` - Sends data to our lightweight python LED wall firmware.
 - ```websocket-output``` - Pixel data is echoed with websockets, meaning you can show a realtime representation of an LED wall on web, mobile, desktop, etc.
 
 3. **clients** -
