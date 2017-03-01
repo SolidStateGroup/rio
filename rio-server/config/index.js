@@ -8,7 +8,7 @@ module.exports = {
     },
     use8bitColors: true,
     sendToConsole: true,
-    sendToWebsockets: false,
+    sendToWebsockets: true,
     sendToPi: false,
     slackToken: ''
 };
