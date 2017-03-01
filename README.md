@@ -33,7 +33,7 @@ A web app hosting a collection of examples that send pixel data to the rio serve
 
   *e.g. pong, paint, breakout and more*
 
-You can controll rio-canvas from a separate application (e.g rio-mobile) by connecting to it via websockets and sending string messages such as :
+You can control rio-canvas from a separate application (e.g rio-mobile) by connecting to it via websockets and sending string messages such as :
 
  - ```route_pong``` - routing
  - ```'UP', 'DOWN', 'LEFT', 'RIGHT', 'S', 'T', 'C', 'X'``` Player 1 controller
