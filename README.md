@@ -53,11 +53,12 @@ Project specific documentation can be found within each of the application direc
 
 -  <a href='./rio-mobile'>rio-mobile</a> Requires you to be running both **rio-server** and **rio-canvas** have a valid api/websocket address defined in its ```config.js```
 
-**Prerequesite**
+**Prerequesite (make sure these are installed and linked)**
 
 ```
 brew install pkg-config cairo libpng jpeg giflib 
 ```
+
 **install required libs**
 
 ```
