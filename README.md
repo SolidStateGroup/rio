@@ -17,6 +17,9 @@ These files interpret data coming in before frame data is sent to the LED wall.
 
 
 2. **outputs** -
+
+<img src="./rio-canvas/example.gif"/>
+
 These files interpret frame data and output them:
 
 - ```console-output``` - Write coloured pixels to terminal.

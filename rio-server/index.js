@@ -39,7 +39,7 @@ wsClient.init(app);
 const getImageData = require('./inputs/gif-url-input');
 const getVideoData = require('./inputs/video-url-input');
 
-getImageData('http://en.bloggif.com/tmp/6b84db8afee6e34259321142f9b0623a/text.gif?1488370466'); // 50fps 50x30 RGB rect
+getImageData('https://media.giphy.com/media/3o7buekWPtAWpscQCY/giphy.gif'); // 50fps 50x30 RGB rect
 //getImageData('http://i.giphy.com/3oz8xEMwRxFQV21ntC.gif'); // 5s 6x5 stripey GIF
 // getImageData('http://i.giphy.com/l0MYE0GTUJFY5PWcU.gif'); // 30x1 5s 2 frame GIF
 // getImageData('http://i.giphy.com/3oz8xwDZ6N4vt2D6so.gif'); // 5s 12x10 stripey GIF
