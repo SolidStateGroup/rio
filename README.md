@@ -1,4 +1,4 @@
-<img src='./logo.png'/>
+<img height="200" src='./logo.png'/>
 #What is rio?
 The main focus of rio was to allow us to build an interactive LED wall that was internet connected.
 
@@ -28,7 +28,7 @@ Integrate with clients that send any form of data, converting them to inputs:
 - ```websocket-client``` - Accepts raw canvas pixel data and sends directly to outputs.
 
 
-##2. <a href='./rio-server'>rio-canvas</a>
+##2. <a href='./rio-canvas'>rio-canvas</a>
 A web app hosting a collection of examples that send pixel data to the rio server.
 
   *e.g. pong, paint, breakout and more*
@@ -47,11 +47,11 @@ An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>R
 #Installation
 Installation instructions can be found within each of the application directories above. A few high level notes here to keep in mind:
 
-- **rio-server** can run independently, simply go through the installation instructions there and simulate the LED wall in your terminal within minutes.
+- <a href='./rio-server'>rio-server</a> can run independently, simply go through the installation instructions there and simulate the LED wall in your terminal within minutes.
 
-- **rio-canvas** Requires you to be running **rio-server** and have a valid websocket address defined in its ```config.js```
+- <a href='./rio-canvase'>rio-canvas</a> Requires you to be running **rio-server** and have a valid websocket address defined in its ```config.js```
 
-- **rio-canvas** Requires you to be running both **rio-server** and **rio-canvas** have a valid api/websocket address defined in its ```config.js```
+-  <a href='./rio-mobile'>rio-mobile</a> Requires you to be running both **rio-server** and **rio-canvas** have a valid api/websocket address defined in its ```config.js```
 
 
 
