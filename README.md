@@ -1,4 +1,4 @@
-<img src='./logo.png'/>
+<img height="200" src='./logo.png'/>
 #What is rio?
 The main focus of rio was to allow us to build an interactive LED wall that was internet connected.
 
