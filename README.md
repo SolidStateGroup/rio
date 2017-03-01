@@ -1,6 +1,6 @@
 <img height="200" src='./logo.png'/>
 #What is rio?
-The main focus of rio was to allow us to build an interactive LED wall that was internet connected. This project has been used to power a 2 meter wide 1.13 meter tall LED display made by Solid State Group.
+The main focus of rio was to allow us to build an interactive LED wall that was internet connected. This project has been used to power a 2 meter wide 1.13 by meter tall LED display made by Solid State Group.
 
 We were originally inspired originally by <a href="https://googlecreativelab.github.io/anypixel/">Google Creative Labs's anypixel</a> however felt that we could create a library ourselves that's a lot easier to build on top of and understand for curious devs who wanted to build something cool.
 
