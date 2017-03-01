@@ -53,5 +53,19 @@ Installation instructions can be found within each of the application directorie
 
 -  <a href='./rio-mobile'>rio-mobile</a> Requires you to be running both **rio-server** and **rio-canvas** have a valid api/websocket address defined in its ```config.js```
 
+**Prerequesite**
+
+```
+brew install pkg-config cairo libpng jpeg giflib 
+```
+**install required libs**
+
+```
+npm i                                     #install server, canvas and mobile
+npm start server                          #run rio-server
+npm start canvas                          #run rio-canvas
+npm run ios                               #run rio-mobile with ios
+```
+
 
 
