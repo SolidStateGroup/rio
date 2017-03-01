@@ -5,6 +5,9 @@ The main focus of rio was to allow us to build an interactive LED wall that was 
 We were originally inspired originally by <a href="https://googlecreativelab.github.io/anypixel/">Google Creative Labs's anypixel</a> however felt that we could create a library ourselves that's a lot easier to build on top of and understand for curious devs who wanted to build something cool.
 
 ##1. <a href='./rio-server'>rio-server</a>
+
+<img src="./rio-server/example.gif"/>
+
 The main component in this library, it takes different types of data, converts it to rgb arrays and sends it to the LED wall (or any output e.g. terminal). At a high level this is broken down into 3 simple concepts:
 
 1. **inputs** -
