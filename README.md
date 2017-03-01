@@ -17,9 +17,6 @@ These files interpret data coming in before frame data is sent to the LED wall.
 
 
 2. **outputs** -
-
-<img src="./rio-canvas/example.gif"/>
-
 These files interpret frame data and output them:
 
 - ```console-output``` - Write coloured pixels to terminal.
@@ -35,6 +32,9 @@ Integrate with clients that send any form of data, converting them to inputs:
 
 
 ##2. <a href='./rio-canvas'>rio-canvas</a>
+
+<img src="./rio-canvas/example.gif"/>
+
 A web app hosting a collection of examples that send pixel data to the rio server.
 
   *e.g. pong, paint, breakout and more*
