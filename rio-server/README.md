@@ -1,4 +1,4 @@
-PixelWall messaging API
+rio-server
 ==================================
 
 This project provides a super generic and flexible api for drawing to a pixel wall. The project is split up into 3 main areas:
@@ -24,18 +24,4 @@ Allow custom clients to intepret their own custom data, converting them to input
 - ```websocket-client``` - accepts canvas pixel data and sends directly to ```send-data```
 - ```web-client``` - restful api (docs coming soon), request are forwarded onto appropriate input or client
 
-_______________
 
-Getting Started
----------------
-
-# Install dependencies
-```brew install pkg-config cairo pango libpng jpeg giflib```
-```npm i```
-
-# Run
-```npm start```
-- API ``http://localhost:3000``
-
-
-<img height="150" src="./example.gif"/>
