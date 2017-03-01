@@ -98,3 +98,8 @@ npm run ios
 ```
 npm run android
 ```
+
+
+#Hardware spec
+<a href="./HardwareSpec.md">If you're looking to make a big LED wall like we did, here's how we did it</a>
+
