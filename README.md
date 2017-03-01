@@ -59,19 +59,6 @@ Project specific documentation can be found within each of the application direc
 brew install pkg-config cairo libpng jpeg giflib 
 ```
 
-**install required libs**
-
-```
-npm i                                     #install server, canvas and mobile
-npm start server                          #run rio-server
-npm start canvas                          #run rio-canvas
-npm run ios                               #run rio-mobile with ios
-```
-
-
-```
-brew install pkg-config glib cairo libpng jpeg giflib
-```
 
 ```
 cd ./rio-server && npm i
