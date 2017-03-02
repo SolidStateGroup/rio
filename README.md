@@ -1,4 +1,4 @@
-<img height="200" src='./header-logo.png'/>
+<img height="200" max-width: '100%' src='./header-logo.png'/>
 #What is rio?
 The main focus of rio was to allow us to build an interactive LED wall that was internet connected. This project has been used to power a 2 meter wide 1.13 by meter tall LED display made by Solid State Group. rio-server currently runs here on a Raspberry Pi and drives 2040 pixels with a generic REST and WebSocket API, we also use rio-canvas and rio-mobile to add new ways to interact with it. 
 
