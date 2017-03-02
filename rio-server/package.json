@@ -1,8 +1,8 @@
 {
-  "name": "pixelwall-api",
-  "display_name": "AnyPixel Slack Messaging API",
+  "name": "rio-server",
+  "display_name": "rio Server",
   "version": "1.0.0",
-  "description": "Listens for slack images and sends the image data out via UDP",
+  "description": "Converts data into suitable format for LED walls (or any other output)",
   "main": "./index.js",
   "engines": {
     "node": "4.1.1",
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "pi": "python ./firmware/rpi/neopixel.py",
+    "pi": "python ./firmware/rpi/server.py",
     "dev": "nodemon --exec npm run start"
   },
   "dependencies": {
