@@ -96,7 +96,7 @@ npm run android
 ```
 
 # Hardware spec
-<a href="./HardwareSpec.md">If you're looking to make a big LED wall like we did, here's how we did it</a>
+<a href="./hardware/">If you're looking to make a big LED wall like we did, here's how we did it</a>
 
 # What are you using this for?
 We're curious to see how people are using this library. Submit an issue letting us know and we'll show it off here.
