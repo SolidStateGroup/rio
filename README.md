@@ -6,7 +6,7 @@ The main project behind Rio is an interactive, internet connected LED wall. Rio 
 
 We were originally inspired by <a href="https://googlecreativelab.github.io/anypixel/">Google Creative Labs's anypixel</a>, however felt that we could create a library ourselves that's a lot easier to build on top of and understand for curious developers who wanted to build something cool.
 
-<img style="text-align: center;" src="./rio-vid.gif"/>
+<img src="./rio-vid.gif"/>
 
 ##1. <a href='./rio-server'>rio-server</a>
 
