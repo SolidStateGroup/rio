@@ -49,11 +49,10 @@ You can control rio-canvas from a separate application (e.g rio-mobile) by conne
 ##3. <a href='./rio-mobile'>rio-mobile</a>
 An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>React Native</a> that demonstrates both reading and writing to rio-server.
 
+<img src="./rio-mobile/example.gif"/>
 
 #Installation
 Project specific documentation can be found within each of the application directories above. A few high level notes here to keep in mind:
-
-<img src="./rio-mobile/example.gif"/>
 
 - <a href='./rio-server'>rio-server</a> can run independently, simply go through the installation instructions there and simulate the LED wall in your terminal within minutes.
 
