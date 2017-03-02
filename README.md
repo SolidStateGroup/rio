@@ -1,6 +1,6 @@
 <img height="200" src='./logo.png'/>
 #What is rio?
-The main focus of rio was to allow us to build an interactive LED wall that was internet connected.
+The main focus of rio was to allow us to build an interactive LED wall that was internet connected. This project has been used to power a 2 meter wide 1.13 by meter tall LED display made by Solid State Group. rio-server currently runs here on a Raspberry Pi and drives 2040 pixels with a generic REST and WebSocket API, we also use rio-canvas and rio-mobile to add new ways to interact with it. 
 
 We were originally inspired originally by <a href="https://googlecreativelab.github.io/anypixel/">Google Creative Labs's anypixel</a> however felt that we could create a library ourselves that's a lot easier to build on top of and understand for curious devs who wanted to build something cool.
 
@@ -49,11 +49,10 @@ You can control rio-canvas from a separate application (e.g rio-mobile) by conne
 ##3. <a href='./rio-mobile'>rio-mobile</a>
 An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>React Native</a> that demonstrates both reading and writing to rio-server.
 
+<img src="./rio-mobile/example.gif"/>
 
 #Installation
 Project specific documentation can be found within each of the application directories above. A few high level notes here to keep in mind:
-
-<img src="./rio-mobile/example.gif"/>
 
 - <a href='./rio-server'>rio-server</a> can run independently, simply go through the installation instructions there and simulate the LED wall in your terminal within minutes.
 
@@ -108,5 +107,5 @@ npm run android
 We're curious to see how people are using this library, submit an issue letting us know and we'll show it off here.
 
 #Contribute
-We welcome new features / bug fixes, feel free to submit a PR or add an issue with your suggestions.
+We welcome new features / bug fixes, feel free to submit a PR or add an issue with your suggestions. Even if the integrations are pretty out there (biosensors, big data, image recognition) we're willing to give it a go and help out.
 
