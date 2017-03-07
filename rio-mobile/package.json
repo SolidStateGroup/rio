@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "react-native run-ios",
-    "android": "react-native run-ios",
+    "android": "react-native run-android"
   },
   "dependencies": {
     "gl-react": "^2.2.4",
