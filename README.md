@@ -10,6 +10,8 @@ We were originally inspired by <a href="https://googlecreativelab.github.io/anyp
 
 ##1. <a href='./rio-server'>rio-server</a>
 
+<img src="./mario.gif"/>
+<img src="./twitter.gif"/>
 <img src="./rio-server/example.gif"/>
 
 This is the main component in the library. It takes different types of data, converts it to rgb arrays and sends it to the LED wall (or any output e.g. terminal). At a high level this is broken down into 3 simple concepts:
