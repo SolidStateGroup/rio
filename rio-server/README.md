@@ -20,6 +20,7 @@ These files intepret take frame data and output them to devices:
 ## 3 /clients
 Allow custom clients to intepret their own custom data, converting them to inputs:
 
+- ```twitter-client``` - subscribes to twitter stream and displays text on the wall matching #rio
 - ```slack-client``` - handles messages and passes through as video or gif inputs
 - ```websocket-client``` - accepts canvas pixel data and sends directly to ```send-data```
 - ```web-client``` - restful api (docs coming soon), request are forwarded onto appropriate input or client
