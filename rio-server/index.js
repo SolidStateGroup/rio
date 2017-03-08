@@ -42,11 +42,5 @@ const getImageData = require('./inputs/gif-url-input');
 const getVideoData = require('./inputs/video-url-input');
 
 getImageData('https://media.giphy.com/media/xUA7b3zUuoScFWe3bW/giphy.gif'); // 50fps 50x30 RGB rect
-// getImageData('http://i.giphy.com/3oz8xEMwRxFQV21ntC.gif'); // 5s 6x5 stripey GIF
-// getImageData('http://i.giphy.com/l0MYE0GTUJFY5PWcU.gif'); // 30x1 5s 2 frame GIF
-// getImageData('http://i.giphy.com/3oz8xwDZ6N4vt2D6so.gif'); // 5s 12x10 stripey GIF
-
-//getVideoData('https://www.youtube.com/watch?v=wS8ZC271eMQ');
-
 
 module.exports = app;
