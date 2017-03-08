@@ -26,7 +26,7 @@ These files interpret frame data and output them:
 
 3. **clients** -
 Integrate with clients that send any form of data, converting them to inputs:
-
+- ```twitter-client``` - Subscribes to twitter stream and displays text on the wall matching #rio.
 - ```slack-client``` - Handles messages and passes through as video or gif inputs.
 - ```web-client``` - Restful API, request are forwarded onto appropriate input.
 - ```websocket-client``` - Accepts raw canvas pixel data and sends directly to outputs.
