@@ -67,9 +67,9 @@ Project specific documentation can be found within each of the application direc
 **Prerequesite (make sure these are installed and linked)**
 
 ```
-brew install pkg-config cairo libpng jpeg giflib 
+brew install pkg-config cairo libpng jpeg giflib (mac)
+apt-get install pkg-config cairo libpng jpeg giflib (pi)
 ```
-
 
 ```
 cd ./rio-server && npm i
