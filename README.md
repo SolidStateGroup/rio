@@ -8,7 +8,7 @@ We were originally inspired by <a href="https://googlecreativelab.github.io/anyp
 
 <img src="./rio-vid.gif"/>
 
-##1. <a href='./rio-server'>rio-server</a>
+## 1. <a href='./rio-server'>rio-server</a>
 
 This is the main component in the library. It takes different types of data, converts it to rgb arrays and sends it to the LED wall (or any output e.g. terminal). 
 
@@ -35,7 +35,7 @@ Integrate with clients that send any form of data, converting them to inputs:
 - ```web-client``` - Restful API, request are forwarded onto appropriate input.
 - ```websocket-client``` - Accepts raw canvas pixel data and sends directly to outputs.
 
-##2. <a href='./rio-canvas'>rio-canvas</a>
+## 2. <a href='./rio-canvas'>rio-canvas</a>
 
 <img src="./rio-canvas/example.gif"/>
 
@@ -50,7 +50,7 @@ You can control rio-canvas from a separate application (e.g rio-mobile) by conne
  - ```'UP2', 'DOWN2', 'LEFT2', 'RIGHT2', 'S2', 'T2', 'C2', 'X2'``` Player 2 controller
 
 
-##3. <a href='./rio-mobile'>rio-mobile</a>
+## 3. <a href='./rio-mobile'>rio-mobile</a>
 An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>React Native</a> that demonstrates both reading and writing to rio-server.
 
 <img src="./rio-mobile/example.gif"/>
