@@ -17,7 +17,7 @@
     "@slack/client": "^3.6.0",
     "ansi-256-colors": "^1.1.0",
     "body-parser": "^1.13.3",
-    "canvas": "^1.6.2",
+    "canvas": "1.6.3",
     "cors": "^2.7.1",
     "express": "^4.13.3",
     "fluent-ffmpeg": "^2.1.0",
