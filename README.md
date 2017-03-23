@@ -81,6 +81,7 @@ cd ./rio-server && npm i
 ```
 
 ```
+npm i nodemon -g
 cd ./rio-canvas && npm i
 ```
 
