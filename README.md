@@ -116,7 +116,7 @@ We're curious to see how people are using this library. Submit an issue letting 
 # Contribute
 We welcome new features / bug fixes, feel free to submit a PR or add an issue with your suggestions. Even if the integrations are pretty out there (biosensors, big data, image recognition) we're willing to give it a go and help out.
 
-For more information about contributing PRs, please see our <a href="CONTRIBUTING.md">Contribution Guidelines</a>.
+For more information about contributing PRs, please see our <a href="CONTRIBUTING.md">Contribution Guidelines</a>. Looking at PRs or issues labelled with "good first task" is a great start to contributing.
 
 # Getting Help
 If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. 
