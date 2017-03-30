@@ -8,6 +8,10 @@ We were originally inspired by <a href="https://googlecreativelab.github.io/anyp
 
 <img src="./rio-vid.gif"/>
 
+
+**New! Checkout the rio-vr branch for our virtual reality implementation!**
+<img src="./vr.gif"/>
+
 ## 1. <a href='./rio-server'>rio-server</a>
 
 This is the main component in the library. It takes different types of data, converts it to rgb arrays and sends it to the LED wall (or any output e.g. terminal). 
