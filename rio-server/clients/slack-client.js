@@ -9,7 +9,8 @@ var token = require('../config').slackToken;
 var rtm = new RtmClient(token, { logLevel: 'error' });
 var channel = null;
 var rtmStart = null;
-var handleImageUrl = require('../inputs/gif-url-input');
+var handleImageUrl = require('../inputs/image-url-input');
+var handleGIFUrl = require('../inputs/gif-url-input');
 var handleVideoUrl = require('../inputs/video-url-input');
 
 var SlackClient = function () {
@@ -56,7 +57,11 @@ var SlackClient = function () {
                     }
                 }
                 if (imageUrl) {
-                    handleImageUrl(imageUrl);
+                    if (imageUrl.toLowerCase().indexOf('.gif') !== -1) {
+                        handleGIFUrl(imageUrl);
+                    } else {
+                        handleImageUrl(imageUrl);
+                    }
                 } else if (videoUrl) {
                     handleVideoUrl(videoUrl);
                 }
