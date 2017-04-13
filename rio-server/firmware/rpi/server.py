@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import socket
 import os
-import json
 
 from neopixel import *
 
@@ -72,7 +71,7 @@ if __name__ == '__main__':
                     index += 1
 
                     # Check whether end of frame has been reached and if so reset pixel index and show pixels
-                    if index == 60 * 34:
+                    if index == LED_COUNT + LED_2_COUNT:
                         index = 0
                         strip.show()
                         strip2.show()

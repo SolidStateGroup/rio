@@ -79,13 +79,13 @@ if __name__ == '__main__':
                         if index < LED_COUNT:
                             ws.ws2811_led_set(channel, index, (ord(data[i + 1]) << 16) | (ord(data[i]) << 8) | ord(data[i + 2]))
                         else:
-                            ws.ws2811_led_set(channel2, index, (ord(data[i + 1]) << 16) | (ord(data[i]) << 8) | ord(data[i + 2]))
+                            ws.ws2811_led_set(channel2, index - LED_COUNT, (ord(data[i + 1]) << 16) | (ord(data[i]) << 8) | ord(data[i + 2]))
 
                         # Increment the pixel index
                         index += 1
 
                         # Check whether end of frame has been reached and if so reset pixel index and show pixels
-                        if index == 60 * 34:
+                        if index == LED_COUNT + LED_2_COUNT:
                             index = 0
                             # Send the LED color data to the hardware.
                             resp = ws.ws2811_render(leds)
