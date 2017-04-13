@@ -37,7 +37,7 @@ wsClient.init(app);
 
 // Startup content
 const startup = () => {
-    const getImageData = require('./inputs/image-url-input');
+    //const getImageData = require('./inputs/image-url-input');
     const getGIFData = require('./inputs/gif-url-input');
     const getVideoData = require('./inputs/video-url-input');
 
