@@ -30,17 +30,38 @@ app.use(bodyParser.json({limit: '50mb'}));
 
 app.use('/', api());
 
-//Start clients
+// Start clients
 twitterClient.init();
 slackClient.init();
 wsClient.init(app);
 
+// Startup content
+const startup = () => {
+    const getImageData = require('./inputs/image-url-input');
+    const getGIFData = require('./inputs/gif-url-input');
+    const getVideoData = require('./inputs/video-url-input');
 
-// Startup GIF
+    getGIFData('https://media.giphy.com/media/xUA7b3zUuoScFWe3bW/giphy.gif'); // rio
+    // getGIFData('https://media.giphy.com/media/l3vRjnRH14rBOlUqY/source.gif'); // 50fps 50x30 RGB rect
+    // getGIFData('http://i.giphy.com/3oz8xEMwRxFQV21ntC.gif'); // 5s 6x5 stripey GIF
+    // getGIFData('http://i.giphy.com/l0MYE0GTUJFY5PWcU.gif'); // 30x1 5s 2 frame GIF
+    // getGIFData('http://i.giphy.com/3oz8xwDZ6N4vt2D6so.gif'); // 5s 12x10 stripey GIF
 
-const getImageData = require('./inputs/gif-url-input');
-const getVideoData = require('./inputs/video-url-input');
+    // getVideoData('https://www.youtube.com/watch?v=wS8ZC271eMQ');
+}
 
-getImageData('https://media.giphy.com/media/xUA7b3zUuoScFWe3bW/giphy.gif'); // 50fps 50x30 RGB rect
+// With RPi output enabled, wait for python script to connect to node before rendering startup.
+const config = require('./config');
+if (config.sendToPi) {
+    const piOutput = require('./outputs/pi-output.js');
+    var timer = setInterval(() => {
+        if (piOutput.connected()) {
+            clearInterval(timer);
+            startup();
+        }
+    }, 500);
+} else {
+    startup();
+}
 
 module.exports = app;
