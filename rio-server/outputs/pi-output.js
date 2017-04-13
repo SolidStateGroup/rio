@@ -29,6 +29,9 @@ ipc.connectTo(
 );
 
 module.exports = {
+    connected: function () {
+        return channel ? true : false;
+    },
     drawFrame: function(frame, cb) {
         callback = cb;
         channel && channel.emit(frame);
