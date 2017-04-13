@@ -12,18 +12,8 @@ var resizeCanvas = new Canvas(config.matrix.width, config.matrix.height);
 var canvas;
 var ctx;
 
-var stop = '';
-
 const sendData = function(guid, frame) {
-  sendImageData(guid, frame, 0, () => {
-    if (stop == guid) {
-      stop = '';
-      return;
-    }
-  }, () => {
-    stop = guid;
-    return true;
-  });
+  sendImageData(guid, frame, 0, () => {}, () => true);
 }
 
 module.exports = function (url) {
