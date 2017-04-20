@@ -19,6 +19,8 @@ const slackClient = require('./clients/slack-client');
 const wsClient = require('./clients/websocket-client');
 const twitterClient = require('./clients/twitter-client');
 
+const getGIFData = require('./inputs/gif-url-input');
+const getVideoData = require('./inputs/video-url-input');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -38,9 +40,6 @@ wsClient.init(app);
 // Startup content
 const startup = () => {
     //const getImageData = require('./inputs/image-url-input');
-    const getGIFData = require('./inputs/gif-url-input');
-    const getVideoData = require('./inputs/video-url-input');
-
     getGIFData('https://media.giphy.com/media/xUA7b3zUuoScFWe3bW/giphy.gif'); // rio
     // getGIFData('https://media.giphy.com/media/l3vRjnRH14rBOlUqY/source.gif'); // 50fps 50x30 RGB rect
     // getGIFData('http://i.giphy.com/3oz8xEMwRxFQV21ntC.gif'); // 5s 6x5 stripey GIF
