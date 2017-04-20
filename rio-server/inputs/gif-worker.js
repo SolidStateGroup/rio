@@ -55,7 +55,7 @@ module.exports = (url, done) => {
 
       // Pass results back to parent process
       done({
-        resizedGIF,
+        frames: resizedGIF,
         delay
       });
     } else {

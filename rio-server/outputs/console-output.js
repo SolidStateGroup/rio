@@ -13,7 +13,7 @@ module.exports = {
                     var red = Math.floor(pixel[0] * 6 / 256);
                     var green = Math.floor(pixel[1] * 6 / 256);
                     var blue = Math.floor(pixel[2] * 6 / 256);
-                    consoleOutput += colorsV2.fg.getRgb(red, green, blue) + char + ' ' + colorsV2.reset;
+                    consoleOutput += colorsV2.fg.getRgb(red, green, blue) + colorsV2.bg.getRgb(red, green, blue) + char + ' ' + colorsV2.reset;
                 } else {
                     var maxColor = require('./lib/max-index')(pixel);
                     var ret;

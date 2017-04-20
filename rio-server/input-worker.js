@@ -27,7 +27,7 @@ pool.on('done', (job, message) => {
         return;
     }
     // Send resized frames recursively
-    sendData(uuid.v1(), message.resizedGIF, message.delay);
+    sendData(uuid.v1(), message.frames, message.delay);
 });
 
 module.exports = (input, data) => {

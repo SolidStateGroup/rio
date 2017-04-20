@@ -45,10 +45,11 @@ const startup = () => {
     // getGIFData('http://i.giphy.com/3oz8xEMwRxFQV21ntC.gif'); // 5s 6x5 stripey GIF
     // getGIFData('http://i.giphy.com/l0MYE0GTUJFY5PWcU.gif'); // 30x1 5s 2 frame GIF
     // getGIFData('http://i.giphy.com/3oz8xwDZ6N4vt2D6so.gif'); // 5s 12x10 stripey GIF
-
+    //
     // getVideoData('https://www.youtube.com/watch?v=wS8ZC271eMQ');
 }
 
+// todo: This should be improved
 // With RPi output enabled, wait for python script to connect to node before rendering startup.
 const config = require('./config');
 if (config.sendToPi) {

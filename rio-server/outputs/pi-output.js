@@ -9,6 +9,7 @@ ipc.config.retry= 1500;
 
 var callback = null;
 
+//TODO: this should be put into an init function
 ipc.connectTo(
     'main',
     function(){
