@@ -26,8 +26,9 @@
     "node-ipc": "^8.10.2",
     "node-uuid": "^1.4.7",
     "request": "^2.75.0",
+    "threads": "^0.7.2",
     "twit": "^2.2.5",
     "ws": "^1.1.1",
-    "youtube-dl": "^1.11.1"
+    "youtube-dl": "1.11.0"
   }
 }
