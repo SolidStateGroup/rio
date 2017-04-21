@@ -1,5 +1,7 @@
 <img src='./header-logo.png'>
 
+[![Gitter](https://img.shields.io/gitter/room/gitterHQ/gitter.svg)](https://gitter.im/SolidStateGroup/rio?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 # What is rio?
 
 The main project behind Rio is an interactive, internet connected LED wall. Rio has been used to power a 2 meter x 1.1 meter LED display made by [Solid State Group](https://www.solidstategroup.com). rio-server currently runs here on a Raspberry Pi and drives 2040 pixels with a generic REST and WebSocket API. We also use rio-canvas and rio-mobile to enable new ways to interact with it. 
