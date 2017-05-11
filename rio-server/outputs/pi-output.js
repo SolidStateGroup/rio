@@ -1,6 +1,6 @@
 var ipc = require('node-ipc');
 var PythonShell = require('python-shell');
-var pyshell = new PythonShell('./firmware/rpi/server.py');
+var pyshell = new PythonShell('./firmware/rpi/lowlevel-server.py');
 
 var channel = null;
 ipc.config.id = 'ipc';
