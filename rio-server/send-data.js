@@ -3,7 +3,10 @@ const dgram = require('dgram');
 const config = require('./config');
 const uuid = require('node-uuid');
 const consoleOutput = require('./outputs/console-output');
-const piOutput = require('./outputs/pi-output');
+var piOutput;
+if (config.sendToPi) {
+    piOutput = require('./outputs/pi-output');
+}
 const websocketOutput = require('./outputs/websocket-output');
 
 var sent = true;

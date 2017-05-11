@@ -1,4 +1,7 @@
-var ipc = require('node-ipc')
+var ipc = require('node-ipc');
+var PythonShell = require('python-shell');
+var pyshell = new PythonShell('./firmware/rpi/server.py');
+
 var channel = null;
 ipc.config.id = 'ipc';
 ipc.config.socketRoot = '/tmp/';
