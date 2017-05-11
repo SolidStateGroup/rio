@@ -25,6 +25,7 @@
     "node-fetch": "^1.6.3",
     "node-ipc": "^8.10.2",
     "node-uuid": "^1.4.7",
+    "python-shell": "^0.4.0",
     "request": "^2.75.0",
     "threads": "^0.7.2",
     "twit": "^2.2.5",
