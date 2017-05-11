@@ -10,7 +10,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "pi": "python ./firmware/rpi/server.py",
     "dev": "nodemon --exec npm run start"
   },
   "dependencies": {
