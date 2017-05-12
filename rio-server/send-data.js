@@ -51,22 +51,42 @@ const prepareFrameBuffer = function (raw, pixelsPerRow, zigzag = true, alpha = f
     return buffer;
 };
 
+// Return whether the current sender (if there is one) is able to stop
+function canSendFrame () {
+    return !sender || sender && sender.canStopCb && sender.canStopCb();
+}
+
+// Push trigger functions to an array for any input that cannot be displayed due to the current sender being unable to stop
+var queue = [];
+var queueTriggered = false;
+function addToQueue (type, trigger) {
+    console.log(`Queueing up ${type} input`);
+    queue.push(trigger);
+}
+
 var start;
-function sendFrame (guid, frame, delay, cb, stopCb) {
+function sendFrame (guid, frame, delay, cb, stopCb, canStopCb) {
     //STEP 1: register sender as current, if there is an existing sender callback telling it to stop sending data
     if (!sender) {
         console.log('Sending', guid);
-        sender = { guid, stopCb };
+        sender = { guid, stopCb, canStopCb };
     }
     else if (sender.guid != guid) {
+        queueTriggered = false;
         if (sender.stopCb && sender.stopCb()) {
             console.log('Stopping', sender.guid);
             console.log('Sending', guid);
-            sender = { guid, stopCb };
+            sender = { guid, stopCb, canStopCb };
         }
         else {
             // ignore it, unable to stop the current sender
             return;
+        }
+    } else {
+        // As long as the sender can stop and we haven't already kicked off an input, kick off the first input in the queue
+        if (queue.length && sender.canStopCb() && !queueTriggered) {
+            queue.shift()();
+            queueTriggered = true;
         }
     }
 
@@ -101,4 +121,4 @@ function sendFrame (guid, frame, delay, cb, stopCb) {
 };
 
 //For each frame send image to the device, use (frame rate - previous frame duration) to animate smoothly
-module.exports = sendFrame;
+module.exports = { sendFrame, canSendFrame, addToQueue };

@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const sendImageData = require('../send-data');
+const {sendFrame, canSendFrame, addToQueue} = require('../send-data');
 const config = require('../config');
 const uuid = require('node-uuid');
 const Canvas = require('canvas');
@@ -8,12 +8,17 @@ const canvas = new Canvas(config.matrix.width, config.matrix.height);
 const ctx = canvas.getContext('2d');
 var frames = [];
 
+var canStop = true;
 var stop = '';
+var currentGUID;
 const sendData = function (guid, delay, index = 0) {
     if (index >= frames.length) {
+        if (guid == currentGUID && !canStop) {
+            canStop = true;
+        }
         index = 0;
     }
-    sendImageData(guid, frames[index], delay, () => {
+    sendFrame(guid, frames[index], delay, () => {
         if (stop == guid) {
             stop = '';
             return;
@@ -22,10 +27,16 @@ const sendData = function (guid, delay, index = 0) {
     }, () => {
         stop = guid;
         return true;
-    });
+    }, () => canStop);
 }
 
-module.exports = function (text) {
+const sendText = (text) => {
+    if (config.queueing && !canSendFrame()) {
+        addToQueue('text', () => sendText(text));
+        return;
+    }
+    canStop = false;
+    currentGUID = '';
     var data = JSON.stringify({text: text});
     console.log(data);
     fetch('https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2016-05-19&sentences=true', {
@@ -97,7 +108,9 @@ module.exports = function (text) {
                 frames.push(temp);
             }
 
-            sendData(uuid.v1(), 20);
+            currentGUID = uuid.v1();
+            sendData(currentGUID, 20);
         });
+}
 
-};
+module.exports = sendText;

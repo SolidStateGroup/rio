@@ -1,9 +1,11 @@
 const WebSocket = require('ws');
-const sendFrame = require('../send-data');
+const { sendFrame } = require('../send-data');
 //Assign wss to global scope
 var wss = null;
 var sent = true;
 var lastSent;
+
+const canStop = () => lastSent ? (Date.now() - lastSent > 5000) : true;
 
 module.exports = {
     init: (app) => {
@@ -23,9 +25,7 @@ module.exports = {
                 sendFrame('paint-pixel', JSON.parse(frame), 0, () => {
                     sent = true;
                     lastSent = Date.now();
-                }, () => {
-                    return lastSent ? (Date.now() - lastSent > 5000) : true;
-                });
+                }, canStop, canStop);
             });
         });
     }

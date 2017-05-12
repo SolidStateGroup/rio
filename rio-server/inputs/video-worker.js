@@ -17,10 +17,10 @@ var frames = [];
 
 module.exports = (url, done) => {
 
-    var video = youtubedl(url);
+    var video = youtubedl(url, ['--format=17']); // 176 x 144 @ 12fps
     video.on('info', info => {
         console.log('YouTube Download started');
-        console.log('filename: ' + info.filename);
+        console.log('filename: ' + info._filename);
         console.log('size: ' + info.size);
     });
     video.pipe(fs.createWriteStream('output.mp4'));
@@ -30,20 +30,20 @@ module.exports = (url, done) => {
             .withNoAudio()
             .size(config.matrix.width + 'x' + config.matrix.height)
             .format('rawvideo')
-            .fps(30)
+            .fps(12)
             .outputOptions('-pix_fmt rgb24')
             .on('error', function (err, stdout, stderr) {
                 console.log('An error occurred: ' + err.message);
                 console.log('ffmpeg standard output:\n' + stdout);
                 console.log('ffmpeg standard error:\n' + stderr);
             })
-            .on('end', function () {
+            .on('end', () => {
                 //console.log('Frame zero is', frames[0].length, 'bytes which is', frames[0].length / 3, 'pixels');
                 console.log('Processing finished !', frames.length, 'frames');
                 fs.unlink('output.mp4');
                 done({
                     frames,
-                    delay: 1000/30
+                    delay: 1000/12
                 });
             })
             .pipe();
@@ -51,21 +51,14 @@ module.exports = (url, done) => {
         var buffer = new Buffer([]);
         const frameSize = config.matrix.width * config.matrix.height * 3;
         ffstream.on('data', function (chunk) {
-            console.log('ffmpeg just wrote ' + chunk.length + ' bytes');
-            console.log('chunk:', chunk);
             while (chunk.length) {
                 var bytesToCopy = buffer.length + chunk.length > frameSize ? frameSize - buffer.length : chunk.length;
                 newBuffer = Buffer.allocUnsafe(buffer.length + bytesToCopy);
                 newBuffer.fill(buffer, 0, buffer.length);
                 buffer = newBuffer;
-                console.log('bytes to copy from chunk', bytesToCopy);
-                console.log('buffer length', buffer.length);
                 chunk.copy(buffer, buffer.length - bytesToCopy, 0, bytesToCopy);
-                console.log('copied chunk into buffer', buffer);
                 chunk = chunk.slice(bytesToCopy);
-                console.log('reduced chunk to ', chunk);
                 if (buffer.length === frameSize) {
-                    console.log('adding frame and resetting buffer');
                     frames.push(toArrayBuffer(buffer));
                     buffer = new Buffer([]);
                 }
