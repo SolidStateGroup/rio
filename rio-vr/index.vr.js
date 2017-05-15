@@ -20,12 +20,9 @@ class riovr extends React.Component {
 
     componentWillMount() {
         var ws = new WebSocket(apiWs);
-        // ws.binaryType = 'arraybuffer';
+        ws.binaryType = 'arraybuffer';
         ws.onmessage =(e) => {
-
-            const json = JSON.parse(e.data);
-            // console.log("Hey")
-            PixelWall.set(json)
+            PixelWall.set(Array.from(new Uint8Array(e.data)));
         };
     }
 

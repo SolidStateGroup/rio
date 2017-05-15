@@ -75,9 +75,8 @@ function sendFrame (guid, frame, delay, cb, stopCb) {
     start = Date.now();
     if (config.sendToWebsockets) {
         // Send to websocket clients such as the mobile app
-        //TODO: REVERT THIS WHEN https://github.com/facebook/react-vr/issues/78 is sorted
-        // var preparedFrame = prepareFrameBuffer(frame, config.matrix.width, false, true);
-        websocketOutput.drawFrame(JSON.stringify(frame), (config.sendToPi || config.sendToConsole) ? false : () => {
+        var preparedFrame = prepareFrameBuffer(frame, config.matrix.width, false, true);
+        websocketOutput.drawFrame(preparedFrame, (config.sendToPi || config.sendToConsole) ? false : () => {
             setTimeout(cb, delay - (Date.now() - start));
         });
     }

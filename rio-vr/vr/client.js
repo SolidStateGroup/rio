@@ -64,7 +64,7 @@ function init(bundle, parent, options) {
         const {geometry} = cube;
 
         for (var pixel = 0; pixel < geometry.colors.length; pixel++) {
-            const start = pixel * 3;
+            const start = pixel * 4;
 
             if (cubeModule.colors) {
                 //set color based on latest
