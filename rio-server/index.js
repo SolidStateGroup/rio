@@ -32,7 +32,7 @@ app.use('/', api());
 
 //Start clients
 twitterClient.init();
-// slackClient.init();
+slackClient.init();
 wsClient.init(app);
 
 
@@ -41,6 +41,6 @@ wsClient.init(app);
 const getImageData = require('./inputs/gif-url-input');
 const getVideoData = require('./inputs/video-url-input');
 
-getImageData('http://netdna.webdesignerdepot.com/uploads/2013/07/bipolar-ball.gif'); // 50fps 50x30 RGB rect
+getImageData('https://media.giphy.com/media/xUA7b3zUuoScFWe3bW/giphy.gif'); // 50fps 50x30 RGB rect
 
 module.exports = app;
