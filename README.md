@@ -94,6 +94,10 @@ cd ./rio-canvas && npm i
 ```
 
 ```
+cd ./rio-vr && npm i
+```
+
+```
 cd ./rio-mobile && npm i
 ```
 
@@ -105,6 +109,10 @@ npm run server
 
 ```
 npm run canvas
+```
+
+```
+npm run vr
 ```
 
 ```
