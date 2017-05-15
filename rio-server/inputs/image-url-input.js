@@ -50,6 +50,8 @@ const sendImage = (url) => {
 
       // Send it through
       sendData(uuid.v1(), temp);
+    } else {
+      canStop = true;
     }
   });
 }

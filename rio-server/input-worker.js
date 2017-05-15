@@ -34,6 +34,7 @@ spawnThread = (input, data) => {
         })
         .on('message', message => {
             if (message.err) {
+                canStop = true;
                 console.log('Failed to render GIF', err);
                 return;
             }

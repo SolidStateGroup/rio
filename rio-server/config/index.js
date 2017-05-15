@@ -19,5 +19,6 @@ module.exports = {
         timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
     },
     queueing: true,
-    imageInputDisplayTime: 5000 // Only relevant when queueing is enabled
+    imageInputDisplayTime: 5000, // Only relevant when queueing is enabled,
+    watson: true
 };
