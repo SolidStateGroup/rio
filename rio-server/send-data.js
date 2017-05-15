@@ -65,6 +65,7 @@ function addToQueue (type, trigger) {
 }
 
 var start;
+var lastGUID;
 function sendFrame (guid, frame, delay, cb, stopCb, canStopCb) {
     //STEP 1: register sender as current, if there is an existing sender callback telling it to stop sending data
     if (!sender) {
@@ -72,10 +73,15 @@ function sendFrame (guid, frame, delay, cb, stopCb, canStopCb) {
         sender = { guid, stopCb, canStopCb };
     }
     else if (sender.guid != guid) {
+        if (lastGUID == guid) {
+            // Ignore it, got an extra frame from sender unexpectedly after stopping it
+            return;
+        }
         queueTriggered = false;
         if (sender.stopCb && sender.stopCb()) {
             console.log('Stopping', sender.guid);
             console.log('Sending', guid);
+            lastGUID = sender.guid;
             sender = { guid, stopCb, canStopCb };
         }
         else {
