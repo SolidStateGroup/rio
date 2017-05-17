@@ -26,7 +26,7 @@ app.get('/', function (req, res) {
 
      res.render('index', {
         isDev: true,
-        title: 'test',
+        title: 'rio-canvas',
         layout: false
     });
 });
