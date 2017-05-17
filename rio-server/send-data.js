@@ -52,8 +52,8 @@ const prepareFrameBuffer = function (raw, pixelsPerRow, zigzag = true, alpha = f
 };
 
 // Return whether the current sender (if there is one) is able to stop
-function canSendFrame () {
-    return !sender || sender && sender.canStopCb && sender.canStopCb();
+function canSendFrame (guid) {
+    return !sender || sender.guid == guid || sender && sender.canStopCb && sender.canStopCb();
 }
 
 // Push trigger functions to an array for any input that cannot be displayed due to the current sender being unable to stop
@@ -73,7 +73,7 @@ function sendFrame (guid, frame, delay, cb, stopCb, canStopCb) {
         sender = { guid, stopCb, canStopCb };
     }
     else if (sender.guid != guid) {
-        if (lastGUID == guid) {
+        if (lastGUID == guid && guid !== 'websocket-client') {
             // Ignore it, got an extra frame from sender unexpectedly after stopping it
             return;
         }

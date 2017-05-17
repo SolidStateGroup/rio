@@ -5,7 +5,7 @@ module.exports = {
         if (global.wss) {
             global.wss.clients.forEach(function each (client) {
                 if (client.readyState === WebSocket.OPEN) {
-                    console.log('sending to client')
+                    // console.log('sending to client')
                     client.send(frame);
                 } else {
                     console.log("ERR")
