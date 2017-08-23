@@ -63,6 +63,14 @@ An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>R
 
 <img src="./rio-mobile/example.gif"/>
 
+
+## 4. <a href='./rio-vr'>rio-vr</a>
+
+<img src="./vr.gif"/>
+
+A react-vr client application that hooks into the rio-server socket, visualising the wall's data in 3d.
+
+
 #Installation
 Project specific documentation can be found within each of the application directories above. A few high level notes here to keep in mind:
 
