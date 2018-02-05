@@ -4,7 +4,8 @@
     "server": "cd ./rio-server && npm start",
     "vr": "cd ./rio-vr && npm start",
     "ios": "cd ./rio-mobile && npm run ios",
-    "android": "cd ./rio-mobile && npm run ios"
+    "android": "cd ./rio-mobile && npm run ios",
+    "install-server": "cd ./rio-server && npm i"
   },
   "dependencies": {
   },

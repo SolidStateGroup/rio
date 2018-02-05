@@ -4,7 +4,7 @@
 
 # What is rio?
 
-The main project behind Rio is an interactive, internet connected LED wall. Rio has been used to power a 2 meter x 1.1 meter LED display made by [Solid State Group](https://www.solidstategroup.com). rio-server currently runs here on a Raspberry Pi and drives 2040 pixels with a generic REST and WebSocket API. We also use rio-canvas and rio-mobile to enable new ways to interact with it. 
+The main project behind Rio is an interactive, internet connected LED wall. Rio has been used to power a 2 meter x 1.1 meter LED display made by [Solid State Group](https://www.solidstategroup.com). rio-server currently runs here on a Raspberry Pi and drives 2040 pixels with a generic REST and WebSocket API. We also use rio-canvas and rio-mobile to enable new ways to interact with it.
 
 We were originally inspired by <a href="https://googlecreativelab.github.io/anypixel/">Google Creative Labs's anypixel</a>, however felt that we could create a library ourselves that's a lot easier to build on top of and understand for curious developers who wanted to build something cool.
 
@@ -18,7 +18,7 @@ We were originally inspired by <a href="https://googlecreativelab.github.io/anyp
 
 ## 1. <a href='./rio-server'>rio-server</a>
 
-This is the main component in the library. It takes different types of data, converts it to rgb arrays and sends it to the LED wall (or any output e.g. terminal). 
+This is the main component in the library. It takes different types of data, converts it to rgb arrays and sends it to the LED wall (or any output e.g. terminal).
 
 <img src="./mario.gif"/>
 <img src="./twitter.gif"/>
@@ -42,6 +42,8 @@ Integrate with clients that send any form of data, converting them to inputs:
 - ```slack-client``` - Handles messages and passes through as video or gif inputs.
 - ```web-client``` - Restful API, request are forwarded onto appropriate input.
 - ```websocket-client``` - Accepts raw canvas pixel data and sends directly to outputs.
+
+Full installation instructions for installing rio-server onto a Raspberry Pi can be found <a href='./rio-server#installation-on-a-raspberry-pi'>here</a>.
 
 ## 2. <a href='./rio-canvas'>rio-canvas</a>
 
@@ -71,21 +73,23 @@ An iOS/Android app built in <a href='https://facebook.github.io/react-native/'>R
 A react-vr client application that hooks into the rio-server socket, visualising the wall's data in 3d.
 
 
-#Installation
+# Installation
 Project specific documentation can be found within each of the application directories above. A few high level notes here to keep in mind:
 
-- <a href='./rio-server'>rio-server</a> can run independently; simply go through the installation instructions there and simulate the LED wall in your terminal within minutes.
+- <a href='./rio-server'>rio-server</a> can run independently; simply go through the installation instructions there and simulate the LED wall in your terminal within minutes. Full installation instructions for a Raspberry Pi can be found <a href='./rio-server#installation-on-a-raspberry-pi'>here</a>.
 
 - <a href='./rio-canvase'>rio-canvas</a> Requires you to be running **rio-server** and have a valid websocket address defined in its ```config.js```
 
 -  <a href='./rio-mobile'>rio-mobile</a> Requires you to be running both **rio-server** and **rio-canvas** have a valid api/websocket address defined in its ```config.js```
 
-**Prerequesite (make sure these are installed and linked)**
+**Pre-requisites (make sure these are installed and linked)**
+
+*rio-server*
 
 OS | Command
 ----- | -----
 OS X | `brew install pkg-config cairo pango libpng jpeg giflib`
-Ubuntu | `sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++`
+Ubuntu / Debian | `sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++`
 Fedora | `sudo yum install cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel giflib-devel`
 Solaris | `pkgin install cairo pango pkg-config xproto renderproto kbproto xextproto`
 Windows | [Instructions on our wiki](https://github.com/Automattic/node-canvas/wiki/Installation---Windows)
@@ -96,14 +100,20 @@ Windows | [Instructions on our wiki](https://github.com/Automattic/node-canvas/w
 cd ./rio-server && npm i
 ```
 
+*rio-canvas*
+
 ```
 npm i nodemon -g
 cd ./rio-canvas && npm i
 ```
 
+*rio-vr*
+
 ```
 cd ./rio-vr && npm i
 ```
+
+*rio-mobile*
 
 ```
 cd ./rio-mobile && npm i
@@ -111,17 +121,25 @@ cd ./rio-mobile && npm i
 
 # Running
 
+*rio-server*
+
 ```
 npm run server
 ```
+
+*rio-canvas*
 
 ```
 npm run canvas
 ```
 
+*rio-vr*
+
 ```
 npm run vr
 ```
+
+*rio-mobile*
 
 ```
 npm run ios
@@ -143,7 +161,7 @@ We welcome new features / bug fixes, feel free to submit a PR or add an issue wi
 For more information about contributing PRs, please see our <a href="CONTRIBUTING.md">Contribution Guidelines</a>. Looking at PRs or issues labelled with "good first task" is a great start to contributing.
 
 # Getting Help
-If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. 
+If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.
 
 # Get in touch
 If you have any questions about our projects you can email <a href="mailto:projects@solidstategroup.com">projects@solidstategroup.com</a>.
