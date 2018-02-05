@@ -63,10 +63,10 @@ Install
 
 rio-server is configured to output to console only initially. If you have already hooked up a physical wall of LED's to your Raspberry Pi you will need to reconfigure rio-server to output to it.
 
-The first step is making sure that communication to your LED wall does in fact work. We have provided two standalone scripts for this purpose found in `rio-server/firmware/rpi` called `singlestrandtest.py` and `strandtest.py`. The configuration for each script is at the top and may need to be changed depending on how your LEDs are connected to the GPIO pins on your RPi. Each can be run with python i.e. `python singlestrandtest.py`.
+The first step is making sure that communication to your LED wall does in fact work. We have provided two standalone scripts for this purpose found in `rio-server/firmware/rpi` called `singlestrandtest.py` and `strandtest.py`. The configuration for each script is at the top and will need to be changed to suit your LED wall. In particular the LED count(s) and GPIO pin(s). Each can be run with python i.e. `python singlestrandtest.py`.
 
 Once that works you can then reconfigure rio-server. Edit `rio-server/config/index.js`. Change the `matrix` `width` and `height` to match your LED wall. Enable `sendToPi`.
 
-You may also need to edit the configuration in `rio-server/firmware/rpi/lowlevel-server.py` depending on how your LED wall is connected to the RPi (in the same way as `strandtest.py`).
+You will also need to edit the configuration in `rio-server/firmware/rpi/lowlevel-server.py` (in the same way as `strandtest.py`).
 
 At this point you should be able to run rio-server and the rio logo will be displayed on your LED wall!
