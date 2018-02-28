@@ -72,4 +72,5 @@ You will also need to edit the configuration in `rio-server/firmware/rpi/lowleve
 At this point you should be able to run rio-server and the rio logo will be displayed on your LED wall!
 
 #Video input support
+
 If you wish to utilise streaming video to your device you will need to install FFMPEG, this URL covers the instructions we used when building our wall https://owenashurst.com/?p=242.. 
