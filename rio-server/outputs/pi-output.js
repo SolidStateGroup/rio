@@ -2,6 +2,10 @@ var ipc = require('node-ipc');
 var PythonShell = require('python-shell');
 var pyshell = new PythonShell('./firmware/rpi/lowlevel-server.py');
 
+pyshell.on('message', (message) => {
+    console.log('Python output:', message);
+})
+
 var channel = null;
 ipc.config.id = 'ipc';
 ipc.config.socketRoot = '/tmp/';

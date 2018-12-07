@@ -2,6 +2,7 @@
 import socket
 import os
 import _rpi_ws281x as ws
+import sys
 
 # LED strip configuration:
 LED_COUNT      = 1020      # Number of LED pixels.
@@ -55,18 +56,21 @@ if __name__ == '__main__':
         os.remove("/tmp/app.main")
 
     print("Opening socket...")
+    sys.stdout.flush()
     server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     server.bind("/tmp/app.main")
     server.listen(5)
 
     try:
         print("Listening...")
+        sys.stdout.flush()
         index = 0
         no_data = 0
         while True:
             conn, addr = server.accept()
 
             print("accepted connection")
+            sys.stdout.flush()
 
             while True:
 
@@ -99,9 +103,11 @@ if __name__ == '__main__':
                     break
         print("-" * 20)
         print("Shutting down...")
+        sys.stdout.flush()
         server.close()
         os.remove("/tmp/app.main")
         print("Done")
+        sys.stdout.flush()
     finally:
         # Ensure ws2811_fini is called before the program quits.
         ws.ws2811_fini(leds)
