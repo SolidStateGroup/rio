@@ -15,7 +15,7 @@ module.exports = {
                     var blue = Math.floor(pixel[2] * 6 / 256);
                     consoleOutput += colorsV2.fg.getRgb(red, green, blue) + colorsV2.bg.getRgb(red, green, blue) + char + ' ' + colorsV2.reset;
                 } else {
-                    var maxColor = require('./lib/max-index')(pixel);
+                    var maxColor = require('../lib/max-index')(pixel);
                     var ret;
                     switch (maxColor) {
                         case 1: {
