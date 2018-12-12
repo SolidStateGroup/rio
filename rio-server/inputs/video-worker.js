@@ -1,7 +1,6 @@
 const _ = require('lodash');
 const config = require('../config');
 const ffmpeg = require('fluent-ffmpeg');
-const uuid = require('node-uuid');
 const fs = require('fs');
 const youtubedl = require('youtube-dl');
 

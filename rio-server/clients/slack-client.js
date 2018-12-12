@@ -16,6 +16,7 @@ var handleVideoUrl = require('../inputs/video-url-input');
 var SlackClient = function () {
     var self = this;
     this.init = function () {
+        if (!token) return;
         rtm.start();
 
         return Promise.all([

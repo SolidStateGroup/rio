@@ -1,12 +1,11 @@
 const { sendFrame, canSendFrame, addToQueue } = require('../send-data');
 const request = require('request').defaults({ encoding: null });
-const uuid = require('node-uuid');
+const uuid = require('uuid');
 
 const _ = require('lodash');
 const config = require('../config');
 const Canvas = require('canvas'),
-      Image = Canvas.Image,
-      ImageData = Canvas.ImageData;
+      Image = Canvas.Image;
 
 var resizeCanvas = new Canvas(config.matrix.width, config.matrix.height);
 var canvas;

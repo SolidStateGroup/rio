@@ -1,5 +1,5 @@
 const { sendFrame, canSendFrame, addToQueue } = require('./send-data');
-const uuid = require('node-uuid');
+const uuid = require('uuid');
 const spawn = require('threads').spawn;
 const config = require('./config');
 

@@ -1,7 +1,5 @@
 const _ = require('lodash');
-const dgram = require('dgram');
 const config = require('./config');
-const uuid = require('node-uuid');
 const consoleOutput = require('./outputs/console-output');
 var piOutput;
 if (config.sendToPi) {
@@ -9,9 +7,7 @@ if (config.sendToPi) {
 }
 const websocketOutput = require('./outputs/websocket-output');
 
-var sent = true;
 var sender;
-
 
 const prepareFrame = function (raw, pixelsPerRow, zigzag = true) {
     var groupBypPixel = _.chunk(raw, 3);

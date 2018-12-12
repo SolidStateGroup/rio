@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const {sendFrame, canSendFrame, addToQueue} = require('../send-data');
 const config = require('../config');
-const uuid = require('node-uuid');
+const uuid = require('uuid');
 const Canvas = require('canvas');
 
 const canvas = new Canvas(config.matrix.width, config.matrix.height);
