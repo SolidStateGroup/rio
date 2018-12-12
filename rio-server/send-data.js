@@ -109,21 +109,19 @@ function sendFrame (guid, frame, delay, cb, stopCb, canStopCb) {
             setTimeout(cb, delay - (Date.now() - start));
         });
     }
-    if (config.sendToConsole) {
-        //Option 1 draw to log
+    if (config.sendToPi) {
+        //Option 1 draw to pixel wall
+        frame = prepareFrameBuffer(frame, config.matrix.width, true);
+        piOutput.drawFrame(frame, () => {
+            setTimeout(cb, delay - (Date.now() - start))
+        });
+    } else if (config.sendToConsole) {
+        //Option 2 draw to log
         console.log('\x1Bc');
         frame = prepareFrame(frame, config.matrix.width, false);
         consoleOutput.drawFrame(frame);
         setTimeout(cb, delay - (Date.now() - start));
     }
-    else if (config.sendToPi) {
-        //Option 2 draw to pixel wall and/or any websocket client
-        frame = prepareFrameBuffer(frame, config.matrix.width, true);
-        piOutput.drawFrame(frame, () => {
-            setTimeout(cb, delay - (Date.now() - start))
-        });
-    }
-
 };
 
 //For each frame send image to the device, use (frame rate - previous frame duration) to animate smoothly
