@@ -11,6 +11,7 @@ module.exports = {
     sendToWebsockets: true,
     sendToPi: false,
     slackToken: '',
+    slackChannelName: '',
     twitter: {
         consumer_key:         '',
         consumer_secret:      '',

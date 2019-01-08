@@ -5,30 +5,30 @@
   "description": "Converts data into suitable format for LED walls (or any other output)",
   "main": "./index.js",
   "engines": {
-    "node": "4.1.1",
-    "npm": "3.10.3"
+    "node": "6.x",
+    "npm": "3.10.x"
   },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon --exec npm run start"
   },
   "dependencies": {
-    "@slack/client": "^3.6.0",
+    "@slack/client": "^4.8.0",
     "ansi-256-colors": "^1.1.0",
-    "body-parser": "^1.13.3",
+    "body-parser": "^1.18.3",
     "canvas": "1.6.3",
     "cors": "^2.7.1",
-    "express": "^4.13.3",
+    "express": "^4.16.4",
     "fluent-ffmpeg": "^2.1.0",
-    "lodash": "^4.16.2",
+    "lodash": "^4.17.11",
     "node-fetch": "^1.6.3",
     "node-ipc": "^8.10.2",
-    "uuid": "^3.1.0",
     "python-shell": "^0.4.0",
-    "request": "^2.75.0",
+    "request": "^2.88.0",
     "threads": "^0.7.2",
-    "twit": "^2.2.5",
-    "ws": "^1.1.1",
+    "twit": "^2.2.11",
+    "uuid": "^3.1.0",
+    "ws": "^6.1.2",
     "youtube-dl": "1.11.0"
   }
 }

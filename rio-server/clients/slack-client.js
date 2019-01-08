@@ -1,42 +1,42 @@
 /**
  * Created by kylejohnson on 09/10/2016.
  */
-var data = require('../lib/_data');
-var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
-var RtmClient = require('@slack/client').RtmClient;
-var _ = require('lodash');
-var token = require('../config').slackToken;
-var rtm = new RtmClient(token, { logLevel: 'error' });
+const data = require('../lib/_data');
+const { RTMClient } = require('@slack/client');
+const _ = require('lodash');
+const config = require('../config')
+const rtm = new RTMClient(config.slackToken, { logLevel: 'error' });
 var channel = null;
-var rtmStart = null;
-var handleImageUrl = require('../inputs/image-url-input');
-var handleGIFUrl = require('../inputs/gif-url-input');
-var handleVideoUrl = require('../inputs/video-url-input');
+const handleImageUrl = require('../inputs/image-url-input');
+const handleGIFUrl = require('../inputs/gif-url-input');
+const handleVideoUrl = require('../inputs/video-url-input');
 
 var SlackClient = function () {
     var self = this;
     this.init = function () {
-        if (!token) return;
-        rtm.start();
+        if (!config.slackToken) return;
 
-        return Promise.all([
-            data.post('https://slack.com/api/channels.list?token=' + token + '&exclude_archived=1')
+        rtm.on('error', err => console.log('Slack failed to initialise', err));
+
+        const promise = Promise.all([
+            data.post('https://slack.com/api/channels.list?token=' + config.slackToken + '&exclude_archived=1')
                 .then(function (res) {
-                    return _.find(res.channels, { name: 'pixelwall' });
+                    return _.find(res.channels, { name: config.slackChannelName });
                 }),
-            new Promise(function (resolve) {
-                rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
-                    resolve(rtmStartData)
+            new Promise(resolve => {
+                rtm.on('authenticated', () => {
+                    console.log('Authenticated with Slack successfully');
+                    resolve();
                 });
             }),
-            new Promise(function (resolve) {
-                rtm.on('open', function () {
-                    resolve()
+            new Promise(resolve => {
+                rtm.on('ready', function () {
+                    console.log('Slack is ready')
+                    resolve();
                 });
-            })
-        ]).then(function (items) {
+            }),
+        ]).then((items) => {
             channel = items[0].id;
-            rtmStart = items[1];
             rtm.on('message', function (message) {
               // @TODO video slack support
                 var imageUrl, videoUrl;
@@ -68,11 +68,19 @@ var SlackClient = function () {
                 }
             });
             this.sendSlackMessage('PixelWall Server Activated');
-        }.bind(this));
+        }).catch(err => {
+            console.log('Slack failed to initialise', err);
+        });
+
+        console.log('Initialising Slack integration');
+        rtm.start();
+
+        return promise;
     };
 
     this.sendSlackMessage = function (message) {
-        rtm.sendMessage(message, channel);
+        rtm.sendMessage(message, channel)
+            .catch(e => console.error('Failed to send slack message', e));
     };
 };
 
