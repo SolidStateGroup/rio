@@ -3,5 +3,5 @@ module.exports = {
         width: 60,
         height: 34
     },
-    ws: 'ws://192.168.2.38:3001'
+    ws: 'ws://localhost:3001'
 };
