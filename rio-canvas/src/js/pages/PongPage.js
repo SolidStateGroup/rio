@@ -13,8 +13,7 @@ const config = require('../config');
 
 var clearedFrame = false;
 const TheComponent = class extends Component {
-  displayName:
-  'TheComponent'
+  static displayName = 'PongPage';
 
   constructor(props, context) {
     super(props, context);

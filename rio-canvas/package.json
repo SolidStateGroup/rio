@@ -5,9 +5,9 @@
   "author": "ssg",
   "scripts": {
     "webpack:prod": "webpack --config ./config/webpack.config.prod.js",
-    "server": "babel-node server --presets=es2015-node5,stage-2,react",
+    "server": "node ./server",
     "start": "nodemon --watch server --watch config --exec npm run server",
-    "prod": "npm run webpack:prod && NODE_ENV=production babel-node server --presets=es2015-node5,stage-2,react"
+    "prod": "npm run webpack:prod && NODE_ENV=production node ./server"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.3",
@@ -16,7 +16,6 @@
     "react": "15.3.2",
     "react-click-outside": "2.1.0",
     "react-color": "^2.17.0",
-    "react-document-title": "2.0.2",
     "react-dom": "15.3.2",
     "react-pong": "https://github.com/ohall/react-pong",
     "react-router": "2.8.1",
@@ -29,6 +28,7 @@
     "@babel/plugin-transform-modules-commonjs": "7.1.0",
     "@babel/plugin-transform-react-constant-elements": "7.0.0",
     "@babel/plugin-transform-react-inline-elements": "7.0.0",
+    "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.0.0",
     "babel-eslint": "10.0.1",
@@ -53,6 +53,7 @@
     "style-loader": "0.23.0",
     "url-loader": "1.1.2",
     "webpack": "4.20.2",
+    "webpack-cli": "^3.2.1",
     "webpack-dev-middleware": "3.4.0",
     "webpack-hot-middleware": "2.24.3"
   },

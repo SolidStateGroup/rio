@@ -1,63 +1,53 @@
 // webpack.config.prod.js
 // Watches + deploys files minified + cachebusted
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const src = path.join(__dirname, '../src') + '/';
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
-
+    mode: 'production',
     entry: [
         './src/main.js',
     ],
-
-
+    optimization: { // chunk bundle into Libraries, App JS and dumb components
+        minimizer: [
+            new UglifyJSPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true, // set to true if you want JS source maps
+                extractComments: true,
+                uglifyOptions: {
+                    compress: {
+                        drop_console: true,
+                    },
+                },
+            }),
+        ],
+    },
     output: {
         publicPath: '/',
         path: path.join(__dirname, '../build'),
         filename: '[name].[hash].js'
     },
-
     plugins: require('./plugins')
         .concat([
 
                 //Clear out build folder
                 new CleanWebpackPlugin(['build'], { root: path.join(__dirname, '../') }),
 
-                //Ensure NODE_ENV is set to production
                 new webpack.DefinePlugin({
-                    'process.env': {
-                        'NODE_ENV': JSON.stringify('production')
-                    },
-                    __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+                    __DEV__: false,
                 }),
 
-                //remove duplicate files
-                new webpack.optimize.DedupePlugin(),
+                //Reduce file size
+                new webpack.optimize.OccurrenceOrderPlugin(),
 
                 //pull inline styles into cachebusted file
                 new ExtractTextPlugin({ filename: "style.[hash].css", allChunks: true }),
-
-                new webpack.LoaderOptionsPlugin({
-                    minimize: true,
-                    debug: false
-                }),
-
-                //Uglify
-                new webpack.optimize.UglifyJsPlugin({
-                    compress: {
-                        warnings: false,
-                        'screw_ie8': true
-                    },
-                    output: {
-                        comments: false
-                    },
-                    sourceMap: false
-                }),
-
             ]
             //for each page, produce a html file with base assets
                 .concat(require('./pages').map(function (page) {
@@ -67,6 +57,7 @@ module.exports = {
                             template: './src/' + page + '.handlebars', //template to use
                             "assets": { //add these script/link tags
                                 "client": "[hash].js",
+                                'style': 'style.[hash].css',
                             }
                         }
                     )
@@ -74,10 +65,10 @@ module.exports = {
         ),
 
     module: {
-        loaders: require('./loaders').concat([
+        rules: require('./loaders').concat([
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css!sass' })
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' })
             }
         ])
     }

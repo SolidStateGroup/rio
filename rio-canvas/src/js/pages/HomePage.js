@@ -17,8 +17,7 @@ var isLeft = false;
 var SERVER = 'http://localhost:3001/';
 
 const TheComponent = class extends Component {
-  displayName:
-  'TheComponent'
+  static displayName = 'HomePage';
 
   constructor(props, context) {
     super(props, context);

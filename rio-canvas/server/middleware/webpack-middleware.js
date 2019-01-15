@@ -1,8 +1,8 @@
 //Uses webpack dev + hot middleware
-import webpack from 'webpack';
-import config from '../../config/webpack.config.dev';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
+const webpack = require('webpack');
+const config = require('../../config/webpack.config.dev');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const compiler = webpack(config);
 

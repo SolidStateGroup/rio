@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
 
 const Header = class extends Component {
-    displayName: 'Header';
+    static displayName = 'Header';
 
     render () {
         return (

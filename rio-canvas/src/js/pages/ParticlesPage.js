@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import DocumentTitle from 'react-document-title';
 import resizeImage from '../utils/resize-image-data';
 
 // var SERVER = 'https://pixelwall.herokuapp.com/';
@@ -17,7 +16,7 @@ var ticks = 0;
 const sendFrame = require('./send-frame');
 
 const ParticlesPage = class extends Component {
-    displayName: 'ParticlesPage';
+  static displayName = 'ParticlesPage';
 
   clearCanvas() {
     var ctx = $('canvas')[0].getContext("2d");

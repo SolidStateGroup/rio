@@ -4,7 +4,7 @@ import config from './config';
 import {withRouter} from 'react-router';
 import socketHandler from './utils/socket';
 const App = class extends Component {
-  displayName: 'App';
+  static displayName = 'App';
 
   constructor (props, context) {
     super(props, context);

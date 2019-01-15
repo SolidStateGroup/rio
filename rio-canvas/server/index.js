@@ -1,12 +1,10 @@
-import {renderToString} from 'react-dom/server'
-import express from 'express';
-import exphbs from 'express-handlebars';
-import spm from './middleware/single-page-middleware';
-import webpackMiddleware from './middleware/webpack-middleware';
-import DocumentTitle from 'react-document-title';
+const express = require('express');
+const exphbs = require('express-handlebars');
+const spm = require('./middleware/single-page-middleware');
+const webpackMiddleware = require('./middleware/webpack-middleware');
 const isDev = process.env.NODE_ENV !== 'production';
 const app = express();
-const websocketClient = require('./websocket-client');
+
 if (isDev) { //Serve files from src directory and use webpack-dev-server
     console.log('Enabled Webpack Hot Reloading');
     webpackMiddleware(app);

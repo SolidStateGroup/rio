@@ -1,11 +1,11 @@
 // webpack.config.dev.js
-var path = require('path')
-var src = path.join(__dirname, '../src') + '/';
-var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: 'eval',
+    mode: 'development',
     entry: [
         'webpack-hot-middleware/client',
         'react-hot-loader/patch',
@@ -18,11 +18,11 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
-        new CopyWebpackPlugin([ { from: path.resolve(__dirname, 'src/js/pages/javatari') } ])
+        new webpack.NoEmitOnErrorsPlugin(),
+        new CopyWebpackPlugin([ { from: path.resolve(__dirname, 'src/js/pages/javatari/*.*') } ])
     ],
     module: {
-        loaders: require('./loaders')
+        rules: require('./loaders')
             .concat([
                 {
                     test: /\.scss$/,

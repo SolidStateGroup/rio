@@ -78,7 +78,7 @@ Project specific documentation can be found within each of the application direc
 
 - <a href='./rio-server'>rio-server</a> can run independently; simply go through the installation instructions there and simulate the LED wall in your terminal within minutes. Full installation instructions for a Raspberry Pi can be found <a href='./rio-server#installation-on-a-raspberry-pi'>here</a>.
 
-- <a href='./rio-canvase'>rio-canvas</a> Requires you to be running **rio-server** and have a valid websocket address defined in its ```config.js```
+- <a href='./rio-canvas'>rio-canvas</a> Requires you to be running **rio-server** and have a valid websocket address defined in its ```config.js```
 
 -  <a href='./rio-mobile'>rio-mobile</a> Requires you to be running both **rio-server** and **rio-canvas** have a valid api/websocket address defined in its ```config.js```
 

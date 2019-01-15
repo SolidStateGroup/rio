@@ -7,7 +7,7 @@ const sendFrame = require('./send-frame');
 var uints = [];
 
 const BreakoutPage = class extends Component {
-  displayName: 'BreakoutPage'
+  static displayName = 'BreakoutPage'
 
   constructor (props, context) {
     super(props, context);
