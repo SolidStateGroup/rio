@@ -4,10 +4,11 @@
     "server": "cd ./rio-server && npm start",
     "vr": "cd ./rio-vr && npm start",
     "ios": "cd ./rio-mobile && npm run ios",
-    "android": "cd ./rio-mobile && npm run ios",
+    "android": "cd ./rio-mobile && npm run android",
     "install-server": "cd ./rio-server && npm i"
   },
   "dependencies": {
+
   },
   "description": "An open source library allowing you to create an internet connected LED wall Edit",
   "devDependencies": {},
