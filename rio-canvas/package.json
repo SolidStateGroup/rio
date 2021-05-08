@@ -12,7 +12,7 @@
   "dependencies": {
     "bootstrap": "4.0.0-alpha.3",
     "compass-mixins": "0.12.10",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "react": "15.3.2",
     "react-click-outside": "2.1.0",
     "react-color": "^2.17.0",
