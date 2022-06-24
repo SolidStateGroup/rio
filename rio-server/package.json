@@ -21,7 +21,7 @@
     "express": "^4.16.4",
     "fluent-ffmpeg": "^2.1.0",
     "lodash": "^4.17.11",
-    "node-fetch": "^1.6.3",
+    "node-fetch": "^2.6.7",
     "node-ipc": "^8.10.2",
     "python-shell": "^0.4.0",
     "request": "^2.88.0",
