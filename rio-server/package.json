@@ -18,7 +18,7 @@
     "body-parser": "^1.18.3",
     "canvas": "1.6.3",
     "cors": "^2.7.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "fluent-ffmpeg": "^2.1.0",
     "lodash": "^4.17.11",
     "node-fetch": "^1.6.3",
